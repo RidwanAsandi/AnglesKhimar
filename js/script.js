@@ -7,7 +7,7 @@ document.querySelector("#hamburger-menu").onclick = (e) => {
   e.preventDefault();
 };
 
-// ketika shopping di klik mucul
+// toggle ketika shopping di klik mucul
 const shopping = document.querySelector(".shopping-cart");
 document.querySelector("#shopping-cart-button").onclick = (e) => {
   shopping.classList.toggle("active");
@@ -41,3 +41,27 @@ document.addEventListener("click", function (e) {
     shopping.classList.remove("active");
   }
 });
+
+// modal box
+const itemDetailModal = document.querySelector("#item-detail-modal");
+const itemDetailButtons = document.querySelectorAll(".item-detail-button");
+
+itemDetailButtons.forEach((btn) => {
+  btn.onclick = (e) => {
+    itemDetailModal.style.display = "flex";
+    e.preventDefault();
+  };
+});
+
+// klik tombool close modal box
+document.querySelector(".modal .close-icon").onclick = (e) => {
+  itemDetailModal.style.display = "none";
+  e.preventDefault();
+};
+
+// klik di luar modal
+window.onclick = (e) => {
+  if (e.target === itemDetailModal) {
+    itemDetailModal.style.display = "none";
+  }
+};

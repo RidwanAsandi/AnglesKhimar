@@ -96,7 +96,7 @@ body {
   position: absolute;
   top: 100%;
   right: 7%;
-  background-color:#fff;
+  background-color: #fff;
   width: 45rem;
   height: 5rem;
   display: flex;
@@ -397,8 +397,8 @@ body {
   color: var(--primary);
 }
 
-.produk-unggulan .produk-star .star-full{
-fill: var(--primary);
+.produk-unggulan .produk-star .star-full {
+  fill: var(--primary);
 }
 
 .produk-unggulan .produk-price {
@@ -411,8 +411,6 @@ fill: var(--primary);
   font-weight: lighter;
   font-size: 1rem;
 }
-
-
 
 /* kontak section */
 .contact .row {
@@ -499,6 +497,75 @@ footer .credit a {
   color: var(--bg);
   font-weight: 700;
 }
+/* modal box */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 15% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: slideModal 0.5s;
+}
+
+/* modal animation */
+@keyframes slideModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  right: 1rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-content img {
+  height: 20rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.modal-content a {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  background-color: var(--primary);
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+}
+
+/* item detail */
 
 /* Media Queries resposive layar */
 /* Laptop */
@@ -582,6 +649,9 @@ footer .credit a {
 
   .contact .row form {
     padding-top: 0;
+  }
+  .modal-content {
+    flex-wrap: wrap;
   }
 }
 
